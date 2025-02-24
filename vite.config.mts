@@ -5,7 +5,7 @@ export default defineConfig(({ command }) => {
   return {
     assetsInclude: ["**/*.js", "**/*.wasm"],
     publicDir: "public",
-    base: command === "serve" ? "./" : "/live2d-web-demo/", // ローカルは "./", GitHubは "/live2d-web-demo/"
+    base: command === "serve" ? "./" : "", // ここを "" に変更
     resolve: {
       alias: {
         "@framework": path.resolve(__dirname, "Framework/src"),
@@ -14,7 +14,9 @@ export default defineConfig(({ command }) => {
     build: {
       outDir: "dist",
       rollupOptions: {
-        input: "src/main.ts",
+        input: {
+          main: "index.html",
+        },
         output: {
           entryFileNames: "assets/[name].js",
         },
