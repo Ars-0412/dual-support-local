@@ -4,8 +4,8 @@ import * as path from "path";
 export default defineConfig(({ command }) => {
   return {
     assetsInclude: ["**/*.js", "**/*.wasm"],
-    publicDir: "public",
-    base: command === "serve" ? "./" : "", // ここを "" に変更
+    publicDir: "",
+    base: command === "serve" ? "./" : "/dual-support-local/", // ローカルとGitHub Pagesの切り替え
     resolve: {
       alias: {
         "@framework": path.resolve(__dirname, "Framework/src"),
@@ -15,7 +15,7 @@ export default defineConfig(({ command }) => {
       outDir: "dist",
       rollupOptions: {
         input: {
-          main: "index.html",
+          main: "index.html", // ここをオブジェクト形式に修正
         },
         output: {
           entryFileNames: "assets/[name].js",
