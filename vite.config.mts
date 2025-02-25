@@ -4,7 +4,7 @@ import * as path from "path";
 export default defineConfig(({ command }) => {
   return {
     assetsInclude: ["**/*.js", "**/*.wasm"],
-    publicDir: "public", // ✅ `live2dcubismcore.js` を解決できるようにする
+    publicDir: "docs/Resources", // 🔥 ここを `docs/Resources` に設定（リソースを正しく解決）
     base: "/dual-support-local/", // 🔥 GitHub Pages に合わせる
     resolve: {
       alias: {
