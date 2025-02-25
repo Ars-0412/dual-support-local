@@ -1469,6 +1469,7 @@ const It = 1,
         .then((i) => e(i, i.byteLength));
     }
     static getDeltaTime() {
+      console.log("Fetching:", t); // 🔥 デバッグ用に出力
       return this.deltaTime;
     }
     static updateTime() {
