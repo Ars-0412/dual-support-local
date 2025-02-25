@@ -5,14 +5,14 @@ export default defineConfig(({ command }) => {
   return {
     assetsInclude: ["**/*.js", "**/*.wasm"],
     publicDir: "public", // ✅ `live2dcubismcore.js` を解決できるようにする
-    base: "./", // GitHub Pages で動くように
+    base: "/dual-support-local/", // 🔥 GitHub Pages に合わせる
     resolve: {
       alias: {
         "@framework": path.resolve(__dirname, "Framework/src"),
       },
     },
     build: {
-      outDir: "docs/dist", // 🔥 ここを変更して、`docs/assets/` にビルド
+      outDir: "docs/dist", // 🔥 ここを修正（`dist` ではなく `docs/dist` に出力）
       rollupOptions: {
         input: {
           main: path.resolve(__dirname, "src/main.ts"), // 🔥 `src/main.ts` をエントリーポイントに設定
