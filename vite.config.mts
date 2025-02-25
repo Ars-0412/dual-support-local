@@ -18,7 +18,7 @@ export default defineConfig(({ command }) => {
           main: path.resolve(__dirname, "src/main.ts"), // 🔥 `src/main.ts` をエントリーポイントに設定
         },
         output: {
-          entryFileNames: "assets/[name].js",
+          entryFileNames: "assets/[name]-[hash].js",
         },
       },
     },
