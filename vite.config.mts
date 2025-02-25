@@ -4,15 +4,15 @@ import * as path from "path";
 export default defineConfig(({ command }) => {
   return {
     assetsInclude: ["**/*.js", "**/*.wasm"],
-    publicDir: "",
-    base: command === "serve" ? "./" : "/dual-support-local/", // ローカルとGitHub Pagesの切り替え
+    publicDir: "docs/Resources", // 🔥 `Resources` の参照先を `docs/Resources/` に変更
+    base: "./", // GitHub Pages で動くように
     resolve: {
       alias: {
         "@framework": path.resolve(__dirname, "Framework/src"),
       },
     },
     build: {
-      outDir: "dist",
+      outDir: "docs/dist", // 🔥 ここを変更して、`docs/assets/` にビルド
       rollupOptions: {
         input: {
           main: "index.html", // ここをオブジェクト形式に修正
