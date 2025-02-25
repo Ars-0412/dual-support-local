@@ -1,5 +1,5 @@
 import "/live2dcubismcore.js";
-import './style.css';
+import "./style.css";
 /**
  * Copyright(c) Live2D Inc. All rights reserved.
  *
@@ -7,14 +7,14 @@ import './style.css';
  * that can be found at https://www.live2d.com/eula/live2d-open-software-license-agreement_en.html.
  */
 
-import { LAppDelegate } from './lappdelegate';
-import * as LAppDefine from './lappdefine';
+import { LAppDelegate } from "./lappdelegate";
+import * as LAppDefine from "./lappdefine";
 
 /**
  * ブラウザロード後の処理
  */
 window.addEventListener(
-  'load',
+  "load",
   (): void => {
     // Initialize WebGL and create the application instance
     if (!LAppDelegate.getInstance().initialize()) {
@@ -30,159 +30,14 @@ window.addEventListener(
  * 終了時の処理
  */
 window.addEventListener(
-  'beforeunload',
+  "beforeunload",
   (): void => LAppDelegate.releaseInstance(),
   { passive: true }
 );
 
-const modelPath = '/mao.model3.json';
+const modelPath = "/mao.model3.json";
 
- // 必要なアセットファイルをインポート
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// 必要なアセットファイルをインポート
 
 import "./assets/back_class_normal.png";
 import "./assets/Haru/expressions/F01.exp3.json";

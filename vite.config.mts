@@ -4,7 +4,7 @@ import * as path from "path";
 export default defineConfig(({ command }) => {
   return {
     assetsInclude: ["**/*.js", "**/*.wasm"],
-    publicDir: "docs/Resources", // 🔥 `Resources` の参照先を `docs/Resources/` に変更
+    publicDir: "public", // ✅ `live2dcubismcore.js` を解決できるようにする
     base: "./", // GitHub Pages で動くように
     resolve: {
       alias: {
@@ -15,7 +15,7 @@ export default defineConfig(({ command }) => {
       outDir: "docs/dist", // 🔥 ここを変更して、`docs/assets/` にビルド
       rollupOptions: {
         input: {
-          main: "index.html", // ここをオブジェクト形式に修正
+          main: path.resolve(__dirname, "src/main.ts"), // 🔥 `src/main.ts` をエントリーポイントに設定
         },
         output: {
           entryFileNames: "assets/[name].js",
