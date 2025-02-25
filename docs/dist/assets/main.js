@@ -1,6 +1,16 @@
 console.log("Model Path:", "./Resources/Haru/Haru.model3.json");
 console.log("Icon Path:", "./Resources/icon_gear.png");
 console.log("Current Working Directory:", window.location.href);
+console.log("Loading Live2D Model...");
+Live2DModel.from("./Resources/Haru/Haru.model3.json")
+  .then((model) => {
+    console.log("Model loaded successfully:", model);
+    model.scale.set(0.5);
+    app.stage.addChild(model);
+  })
+  .catch((err) => {
+    console.error("Failed to load Live2D Model:", err);
+  });
 
 (function () {
   const t = document.createElement("link").relList;
